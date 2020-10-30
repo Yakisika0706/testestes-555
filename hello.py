@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,rendar_templetes
 app = Flask(__name__)
 
 import firebase_admin
@@ -19,6 +19,11 @@ ref = db.reference()
 def hello():
     hello = (ref.get())
     return hello
+
+@app.route("/index") #アプリケーション/indexにアクセスが合った場合
+def index():
+   return render_template('index.html') #/indexにアクセスが来たらtemplates内のindex.htmlが開きます
+#ここがサーバーサイドからクライアントサイドへなにかを渡すときのポイントになります。
  
 if __name__ == "__main__":
     app.run()
