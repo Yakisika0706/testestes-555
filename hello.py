@@ -1,4 +1,4 @@
-from flask import Flask,rendar_template
+from flask import Flask, rendar_template
 app = Flask(__name__)
 
 import firebase_admin
