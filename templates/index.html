@@ -13,7 +13,14 @@
         <h3 class="text-muted">Sample Page</h3>
         {% if message %}
           <p>{{message}}</p>
-        {% end if%}
+
+        {% endif%}
+        
+        {% if Dictionary%}
+          <p>name: {{Dictionary.name}}</p>
+          <p>deck: {{Dictionary.deck}}</p>
+        {% endif %}
+
       </div>
     </div>
   </body>

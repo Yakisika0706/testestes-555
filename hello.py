@@ -23,7 +23,10 @@ def hello():
 @app.route("/index") #アプリケーション/indexにアクセスが合った場合
 def index():
     message = 'sample_string'
-   return render_template('index.html',message=message) #/indexにアクセスが来たらtemplates内のindex.htmlが開きます
+    my_dic = {}
+    my_dic['name']='hermes'
+    my_dic['deck']='power of unity'
+    return render_template('index.html',message=message,Dictionary=my_dic) #/indexにアクセスが来たらtemplates内のindex.htmlが開きます
 #ここがサーバーサイドからクライアントサイドへなにかを渡すときのポイントになります。
  
 if __name__ == "__main__":
