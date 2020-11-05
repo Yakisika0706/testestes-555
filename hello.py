@@ -26,7 +26,8 @@ def index():
     my_dic = {}
     my_dic['name']='hermes'
     my_dic['deck']='power of unity'
-    return render_template('index.html',message=message,Dictionary=my_dic) #/indexにアクセスが来たらtemplates内のindex.htmlが開きます
+    return render_template('index.html',message=message,Dictionary=my_dic)
+#/indexにアクセスが来たらtemplates内のindex.htmlが開きます
 #ここがサーバーサイドからクライアントサイドへなにかを渡すときのポイントになります。
  
 if __name__ == "__main__":
