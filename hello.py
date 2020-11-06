@@ -1,3 +1,4 @@
+# coding: utf-8
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ firebase_admin.initialize_app(cred, {
     }
 })
 
-ref = db.reference()
+ref = db.reference('Warrior')
  
 @app.route('/')
 def hello():
@@ -22,7 +23,7 @@ def hello():
 
 @app.route("/index") #アプリケーション/indexにアクセスが合った場合
 def index():
-    message = 'sample_string'
+    message = (ref.get())
     my_dic = {}
     my_dic['name']='hermes'
     my_dic['deck']='power of unity'
