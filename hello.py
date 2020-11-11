@@ -23,7 +23,7 @@ def hello():
 
 @app.route("/index") #アプリケーション/indexにアクセスが合った場合
 def index():
-    message = (ref.get())
+    message = (db.reference('/W00001').get())
     my_dic = {}
     my_dic['name']='hermes'
     my_dic['deck']='power of unity'
