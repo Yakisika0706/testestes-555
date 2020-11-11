@@ -1,5 +1,5 @@
 # coding: utf-8
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 app = Flask(__name__)
 
 import firebase_admin
@@ -28,6 +28,13 @@ def index():
     my_dic['name']='hermes'
     my_dic['deck']='power of unity'
     return render_template('index.html',message=message,Dictionary=my_dic)
+
+@app.route('/index',methods=['POST'])
+def post():
+    name = request.form.get('name')
+    message = (db.reference(name).get())
+    return render_template('index.html',
+                           message = message)
 #/indexにアクセスが来たらtemplates内のindex.htmlが開きます
 #ここがサーバーサイドからクライアントサイドへなにかを渡すときのポイントになります。
  
